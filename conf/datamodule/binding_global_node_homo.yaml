@@ -1,0 +1,33 @@
+defaults:
+  - binding_global_node_hetero
+ 
+train_dataloader:
+  dataset:
+    _target_: src.datasets.binding_dataset.BindingDatasetHomo
+    graph_builder:
+      _target_: src.utils.graph.HomoGraphBuilder
+val_dataloader:
+  dataset:
+    _target_: src.datasets.binding_dataset.BindingDatasetHomo
+    graph_builder:
+      _target_: src.utils.graph.HomoGraphBuilder
+test_dataloader_pdbbind2020:
+  dataset:
+    _target_: src.datasets.binding_dataset.BindingDatasetHomo
+    graph_builder:
+      _target_: src.utils.graph.HomoGraphBuilder
+test_dataloader_coach420:
+  dataset:
+    _target_: src.datasets.binding_dataset.BindingDatasetHomo
+    graph_builder:
+      _target_: src.utils.graph.HomoGraphBuilder
+test_dataloader_holo4k:
+  dataset:
+    _target_: src.datasets.binding_dataset.BindingDatasetHomo
+    graph_builder:
+      _target_: src.utils.graph.HomoGraphBuilder
+# test_dataloader_holo4k_single:
+#   dataset:
+#     _target_: src.datasets.binding_dataset.BindingDatasetHomo
+#     graph_builder:
+#       _target_: src.utils.graph.HomoGraphBuilder

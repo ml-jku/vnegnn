@@ -1,0 +1,20 @@
+defaults:
+  - _self_
+  - datamodule: binding_global_node_homo
+  - logger: wb_train
+  - model: egnn_global_node_homo
+  - trainer: default
+  - callbacks: wb
+  - hydra: default
+
+batch_size: 64
+num_workers: 0
+seed: 42
+debug: false
+number_of_global_nodes: 8
+random_rotations: true
+global_node_subsample_size: 1.0
+neigh_dist_cutoff: 10
+max_neighbours: 10
+esm_features: true
+precision: highest

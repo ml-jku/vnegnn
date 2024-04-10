@@ -1,0 +1,3 @@
+_target_: torch.optim.RMSprop
+_partial_: true
+lr: 0.001

@@ -1,0 +1,7 @@
+[tool.ruff]
+line-length = 99 
+
+[tool.mypy]
+files = ["src", "train.py"]
+no_implicit_optional = true
+check_untyped_defs = true
