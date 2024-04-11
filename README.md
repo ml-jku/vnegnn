@@ -1,10 +1,11 @@
 
 # VN-EGNN: E(3)-Equivariant Graph Neural Networks with Virtual Nodes Enhance Protein Binding Site Identification
 
+[![Open in HuggingFace](https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-sm.svg)](https://huggingface.co/spaces/ml-jku/vnegnn)
 [![](https://img.shields.io/badge/paper-arxiv2310.06763-red?style=plastic&logo=GitBook)](https://arxiv.org/abs/2404.07194)
-[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://huggingface.co/spaces/ml-jku/vnegnn)
-[![](https://img.shields.io/badge/project_page-blue?style=plastic&logo=internetcomputer)](https://linktr.ee/vnegnn)
+[![](https://img.shields.io/badge/model-pink?style=plastic&logo=themodelsresource)](https://huggingface.co/fses91/VNEGNN-MODEL)
 [![](https://img.shields.io/badge/dataset-zenodo-orange?style=plastic&logo=zenodo)](https://zenodo.org/records/10021618)
+[![](https://img.shields.io/badge/project_page-blue?style=plastic&logo=internetcomputer)](https://linktr.ee/vnegnn)
 
 ## News
 
