@@ -169,11 +169,13 @@ trainer.test(model, dataloaders=loader)
 ## Citation
 
 ```
-@article{,
-      title={}, 
-      author = {},
-      journal={},
-      year={}
+@misc{sestak2024vnegnn,
+      title={VN-EGNN: E(3)-Equivariant Graph Neural Networks with Virtual Nodes Enhance Protein Binding Site Identification}, 
+      author={Florian Sestak and Lisa Schneckenreiter and Johannes Brandstetter and Sepp Hochreiter and Andreas Mayr and Günter Klambauer},
+      year={2024},
+      eprint={2404.07194},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
 }
 ```
 
