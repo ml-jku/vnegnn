@@ -3,8 +3,8 @@ import argparse
 import itertools
 import os
 
-import esm
 import lmdb
+from openbabel import openbabel as ob
 from tqdm.notebook import tqdm
 
 from src.utils.common import pmap_multi
@@ -22,20 +22,31 @@ def parse_args():
     return parser.parse_args()
 
 
+def convert_mol2_to_pdb(input_file, output_file):
+    try:
+        obConversion = ob.OBConversion()
+        obConversion.SetInAndOutFormats("mol2", "pdb")
+        mol = ob.OBMol()
+        obConversion.ReadFile(mol, input_file)
+        obConversion.WriteFile(mol, output_file)
+        print(f"Successfully converted {input_file} to {output_file}")
+
+    except Exception as e:
+        print(f"Error converting {input_file}: {str(e)}")
+
+
 def process_chunk(chunk, data_path, device="cpu"):
     # Initialize model for each process
-    model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()
-    model.to(device)
-    model.eval()  # Disables dropout
-
-    batch_converter = alphabet.get_batch_converter()
 
     batch_protein_info = []
     for complex in chunk:
         try:
             complex_path = os.path.join(data_path, complex)
+            protein_pdb_path = os.path.join(complex_path, "protein.pdb")
+            if not os.path.exists(protein_pdb_path):
+                protein_mol2_path = os.path.join(complex_path, "protein.mol2")
+                convert_mol2_to_pdb(protein_mol2_path, protein_pdb_path)
             protein_info = ProteinInfo(complex_path, name=complex)
-            protein_info.create_esm_features(model, batch_converter, device)
             batch_protein_info.append(protein_info)
         except ValueError as e:
             print(e)
@@ -44,7 +55,10 @@ def process_chunk(chunk, data_path, device="cpu"):
             print(f"Error in {complex}")
             continue
         except FileNotFoundError:
-            print(f"File not found in: {complex}")
+            print(f"File not found in: {complex_path}")
+            continue
+        except Exception as e:
+            print(f"Error in {complex}: {e}")
             continue
     return batch_protein_info
 
@@ -55,6 +69,8 @@ def main():
     output_path = args.output_path
     device = args.device
     n_jobs = args.n_jobs
+
+    os.makedirs(output_path, exist_ok=True)
 
     complexes = os.listdir(input_path)
     # Split complexes into chunks
