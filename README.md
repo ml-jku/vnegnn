@@ -109,6 +109,9 @@ If you want to replicated the results from the paper, put the downloaded dataset
 
 The holo4k and the coach420 dataset were created by extracting the relevant ligans from the MOAD database. All ligand protein complexes were put into a different folder, at inference we combine them by there pdb id to evalutate the model based on all the bindingsites for a given protein.
 
+### Download data
+Download the dataset from  [zenodo](https://zenodo.org/records/10782177), the original processing was done from the MODA database, which is not available anymore.
+
 ### Process the datasets
 
 This will create a `lmdb` database for each dataset. The `lmdb` and avoids processing all the data again if you want to create a graph with different parameters.
