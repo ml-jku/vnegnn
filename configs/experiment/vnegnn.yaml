@@ -1,0 +1,6 @@
+# @package _global_
+
+defaults:
+  - default
+
+train_valid_split: scpdb

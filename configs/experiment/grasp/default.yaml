@@ -1,0 +1,24 @@
+# @package _global_
+
+defaults:
+  - override /data: default
+  - override /model: vnegnn
+  - override /paths: default
+
+scaling_factor: 5.0
+
+logger:
+  wandb:
+    name: grasp_${train_valid_split}
+    project: vnegnn
+
+tags: []
+
+data:
+  root: ${paths.data_dir}/grasp
+
+trainer:
+  max_epochs: 500
+  num_sanity_val_steps: 0
+  log_every_n_steps: 15
+  check_val_every_n_epoch: 5

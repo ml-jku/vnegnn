@@ -1,0 +1,11 @@
+_target_: src.datasets.equipocket_dataset.EquipocketDataModule
+root: ${paths.data_dir}/equipocket
+train_valid_split: ${train_valid_split}
+n_jobs: 16
+batch_size: 8
+shuffle: true
+num_workers: 4
+persistent_workers: true
+pin_memory: true
+prefetch_factor: 10
+force_reload: false

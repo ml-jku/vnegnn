@@ -1,0 +1,6 @@
+# @package _global_
+
+defaults:
+  - /experiment/grasp/default
+
+train_valid_split: coach420(mlig)_uniprot

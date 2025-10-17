@@ -1,0 +1,6 @@
+defaults:
+  - default
+  - _self_
+
+_target_: src.datasets.binding_dataset.BindingPDBTrainDataModule
+root: ${paths.data_dir}/equipocket

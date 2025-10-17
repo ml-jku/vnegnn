@@ -1,0 +1,25 @@
+_target_: src.wrappers.equipocket.EquiPocketWrapper
+_recursive_: false
+batch_size: ${data.batch_size}
+
+loss:
+  _target_: src.wrappers.equipocket.EquiPocketLoss
+  segmentation_loss:
+    _target_: src.modules.losses.DiceLoss
+
+backbone:
+  _target_: src.models.equipocket.EquiPocket
+  local_geometric_modeling: true
+  global_structure_modeling: gat_egnn
+  surface_egnn_depth: 4
+  cutoff: 6
+  dense_attention: true
+  out_depth: 2
+  out_features: 128
+
+ema: null
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0001

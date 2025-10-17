@@ -3,20 +3,53 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - biopython==1.78
-  - rdkit==2023.03.3
-  - pymol-open-source==2.5.0
-  - python-lmdb==1.4.1
-  - openbabel==3.1.1
+  - python=3.9
+
+  # Core scientific computing
+  - numpy>=1.24.0
+  - scipy>=1.11.0
+
+  # Data processing and utilities
+  - pandas>=2.2.0
+  - joblib>=1.3.0
+  - tqdm>=4.66.0
+  - click>=8.1.0
+
+  # Chemistry and biology libraries
+  - biopython>=1.81
+  - rdkit>=2023.03.0
+  - openbabel>=3.1.0
+
+  # Data storage
+  - h5py>=3.10.0
+
+  # Machine learning utilities
+  - scikit-learn>=1.3.0
+
+  # Pip packages
   - pip
   - pip:
-      - lightning==2.2.1
-      - wandb==0.16.1
-      - hydra-core==1.3.2
-      - hydra-colorlog==1.2.0
-      - hydra-submitit-launcher==1.2.0
-      - einops==0.7.0
-      - fair-esm==2.0.0
-      - pandas==2.1.4
-      - python-dotenv==1.0.1
-      - gradio==4.20.1
+      # Deep learning framework (PyTorch Lightning)
+      - lightning>=2.2.1
+      - torchmetrics>=1.2.0
+
+      # Configuration management (Hydra)
+      - hydra-core>=1.3.2
+      - hydra-colorlog>=1.2.0
+      - hydra-submitit-launcher>=1.2.0
+
+      # ML utilities
+      - einops>=0.7.0
+      - rootutils>=1.0.7
+
+      # Protein language models
+      - fair-esm>=2.0.0
+
+      # Experiment tracking
+      - wandb>=0.16.0
+
+      # Web interface (optional, for demo app)
+      - gradio>=4.20.0
+
+      # Environment management
+      - python-dotenv>=1.0.0

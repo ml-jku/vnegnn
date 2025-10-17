@@ -1,28 +1,23 @@
-from typing import List
-
-ALLOWABLE_ATOMS: List[str] = ["C", "O", "N", "H", "S", "GlobalNode"]
-
-
-ALLOWABLE_RESIDUES: List[str] = [
-    "GLU",
-    "GLY",
-    "LEU",
-    "MET",
-    "GLN",
-    "LYS",
-    "ARG",
-    "ILE",
-    "VAL",
-    "ALA",
-    "ASN",
-    "HIS",
-    "SER",
-    "TRP",
-    "PHE",
-    "THR",
-    "TYR",
-    "ASP",
-    "PRO",
-    "CYS",
-    "GlobalNode",
-]
+RES_IDS = {
+    "ALA": 0,
+    "ARG": 1,
+    "ASN": 2,
+    "ASP": 3,
+    "CYS": 4,
+    "GLN": 5,
+    "GLU": 6,
+    "GLY": 7,
+    "HIS": 8,
+    "ILE": 9,
+    "LEU": 10,
+    "LYS": 11,
+    "MET": 12,
+    "PHE": 13,
+    "PRO": 14,
+    "SER": 15,
+    "THR": 16,
+    "TRP": 17,
+    "TYR": 18,
+    "VAL": 19,
+    "X": 20,
+}

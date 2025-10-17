@@ -1,4 +1,0 @@
-_target_: torch.optim.lr_scheduler.ReduceLROnPlateau
-_partial_: true
-mode: max
-patience: 100

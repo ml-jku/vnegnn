@@ -1,0 +1,2 @@
+config_lr_scheduler:
+  _target_: src.modules.callbacks.ConfigLRScheduler

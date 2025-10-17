@@ -1,0 +1,6 @@
+defaults:
+  - default
+  - _self_
+
+_target_: src.datasets.binding_dataset.BindingEpDataModule
+batch_size: 8

@@ -1,0 +1,21 @@
+_target_: src.datasets.binding_dataset.BindingDataModule
+root: ${paths.data_dir}/vnegnn
+
+graph_info:
+  _target_: src.datasets.binding_dataset.GraphInfo
+  max_neighbours: 10
+  number_of_global_nodes: 8
+  neigh_dist_cutoff: 10
+
+random_rotations: true
+global_node_subsample_size: 1.0
+sampling_strategy: fibonacci
+train_valid_split: ${train_valid_split}
+n_jobs: 30
+batch_size: 32
+shuffle: true
+num_workers: 4
+persistent_workers: true
+pin_memory: true
+prefetch_factor: 2
+sample_radius: false

@@ -1,0 +1,19 @@
+defaults:
+  - model_checkpoint
+  # - config_lr_scheduler
+  - learning_rate_monitor
+  - model_summary
+  - rich_progress_bar
+  - peak_memory
+  - _self_
+
+model_checkpoint:
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: epoch_{epoch:03d}
+  monitor: val/dcc_ranked
+  mode: max
+  save_last: True
+  auto_insert_metric_name: False
+
+model_summary:
+  max_depth: -1

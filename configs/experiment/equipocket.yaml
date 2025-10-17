@@ -1,0 +1,25 @@
+# @package _global_
+
+defaults:
+  - override /data: equipocket
+  - override /model: equipocket
+  - override /paths: default
+
+train_valid_split: scpdb
+
+logger:
+  wandb:
+    name: equipocket_${train_valid_split}
+    project: vnegnn
+
+trainer:
+  max_epochs: 500
+  num_sanity_val_steps: 0
+  log_every_n_steps: 15
+  check_val_every_n_epoch: 2
+  strategy: ddp_find_unused_parameters_true
+
+callbacks:
+  model_checkpoint:
+    monitor: val/iou
+    mode: max

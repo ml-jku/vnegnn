@@ -1,0 +1,63 @@
+# @package _global_
+
+task_name: debug
+
+# callbacks: null
+
+extras:
+  ignore_warnings: False
+  enforce_tags: False
+
+hydra:
+  job_logging:
+    root:
+      level: DEBUG
+  job:
+    env_set:
+      DEBUG: 1
+      RAND_IDX_RANGE: 60
+
+# logger: null
+logger:
+  wandb:
+    name: debug
+    project: vnegnn
+    offline: true
+
+# n_rollout_timesteps: 42
+num_samples: 2
+
+trainer:
+  log_every_n_steps: 1
+  check_val_every_n_epoch: 2
+  # deterministic: True
+  num_sanity_val_steps: 0
+  max_epochs: 100_000
+  limit_train_batches: 5
+  # limit_val_batches: 1
+  # limit_test_batches: 5
+  # overfit_batches: 1
+  # enable_checkpointing: False
+  # detect_anomaly: true
+  # accelerator: cpu
+  # devices: 1
+  # overfit_batches: 2
+  # limit_val_batches: 1
+  # precision: bf16-mixed
+
+data:
+  batch_size: 8
+  n_jobs: 1
+  num_workers: 0
+  pin_memory: False
+  persistent_workers: False
+  prefetch_factor: null
+#   sampling_strategy: fibonacci
+#   n_jobs: 1
+#   # valid_loader: train_valid
+
+
+# model:
+#   compile: false
+
+log_grads: False

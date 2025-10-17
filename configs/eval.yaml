@@ -1,0 +1,40 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - logger: wandb
+  - trainer: gpu
+  - paths: default
+  - extras: default
+  - hydra: default
+  - optional local: default
+
+task_name: eval
+
+tags: ["eval"]
+
+wandb_run_id: pt8wsnz9
+wandb_project: ${oc.env:WANDB_PROJECT}
+wandb_entity: ${oc.env:WANDB_ENTITY}
+
+logger:
+  wandb:
+    name: eval_${wandb_run_id}
+    project: ${wandb_project}
+    offline: false
+
+ckpt_last: false
+
+ckpt_path: null
+
+seed: 42
+
+model:
+  pred_cycles: 1
+  save_vn_initial_pos: true
+  cluster: null
+
+
+data:
+  batch_size: 8
+  # force_reload: true

@@ -1,0 +1,2 @@
+peak_memory:
+  _target_: src.modules.callbacks.PeakMemory

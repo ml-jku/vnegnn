@@ -1,4 +1,0 @@
-_target_: pytorch_lightning.loggers.WandbLogger
-_partial_: true
-project: egnn-bindingsites
-log_model: true

@@ -102,7 +102,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -128,50 +127,48 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-wandb
-tmp
-egnn-bindingsites
-egnn-bindingsites-regloss-improvement
-docking_bm
-runs
-notebooks/lightning_logs
-notebooks/visualizations/*.pse
-notebooks/*.xyz
-notebooks/visualizations*
-notebooks/exports
-notebooks/artifacts
-outputs
+### VisualStudioCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+**/.vscode
 
-multirun
+# JetBrains
+.idea/
 
-data/*
-data/PDBBind
-data/bindingsite_test_data/coach420/raw
-data/bindingsite_test_data/coach420/processed
-data/bindingsite_test_data/holo4k/raw
-data/bindingsite_test_data/holo4k/processed
-data/bindingsite_test_data/holo4k_bioass/raw
-data/bindingsite_test_data/holo4k_bioass/processed
-data/bindingsite_test_data/pdbbind_refined/raw
-data/bindingsite_test_data/pdbbind_refined/processed
-data/pdbbind_staerk/raw
-data/pdbbind_staerk/processed
-data/pdbbind_staerk/not_parsable_test.txt
-data/pdbbind_staerk/not_parsable_train.txt
-data/pdbbind_staerk/not_parsable_valid.txt
-#!data/bindingsite_test_data/
-data/scpdb/scpdb_subset_puresnet/raw
-data/scpdb/scpdb_subset_puresnet/processed
-!data/scpdb/
-!data/scpdb/scpdb_subset_puresnet
-!data/pdbbind_staerk/
-!data/bindingsite_test_data/holo4k_split_chain/holo4k_split_chain_complex_names
+# Data & Models
+*.h5
+*.tar
+*.tar.gz
 
-slurm*
-artifacts
-#!data/bindingssite_test_data/coach420/not_parsable_test.txt
-#!data/scpdb/scpdb_subset_puresnet/scpdb_subset_puresnet_complex_names
-#!data/scpdb/scpdb_subset_puresnet/scpdb_subset_puresnet_complex_names_train
-#!data/scpdb/scpdb_subset_puresnet/scpdb_subset_puresnet_complex_names_train_debug
-#!data/scpdb/scpdb_subset_puresnet/scpdb_subset_puresnet_complex_names_valid
-#!data/scpdb/scpdb_subset_puresnet/scpdb_subset_puresnet_complex_names_valid_debug
+# Lightning-Hydra-Template
+configs/local/default.yaml
+/data/
+/logs/
+.env
+
+# Aim logging
+.aim
+wandb/*
+
+exports/*
+/exports
+
+src/notebooks/scratchpad.ipynb
+
+.DS_Store
+
+/data/*
+/data
+
+.claude
+CLAUDE.md
+AGENTS.md
+
+.nfs*
+exports/*
+
+.cursor

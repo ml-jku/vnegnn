@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - default
+  - override /data: default
+
+train_valid_split: pdbbind2020
+
+data:
+  _target_: src.datasets.binding_dataset.BindingPDBTrainDataModule
+  root: ${paths.data_dir}/equipocket
